@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Yuch3n Blog</title>
+  <title>Yuch3n Dev</title>
   <icon>https://yuch3nchen.github.io/icon.png</icon>
   <subtitle>Music and programming enthusiast</subtitle>
   <link href="https://yuch3nchen.github.io/atom.xml" rel="self"/>
