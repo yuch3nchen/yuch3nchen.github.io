@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://yuch3nchen.github.io/posts/21743/next-theme.png">
 <meta property="og:image" content="https://yuch3nchen.github.io/posts/21743/hexo-theme.png">
 <meta property="article:published_time" content="2025-01-14T07:07:06.000Z">
-<meta property="article:modified_time" content="2025-01-14T08:21:12.985Z">
+<meta property="article:modified_time" content="2025-01-14T08:38:28.427Z">
 <meta property="article:author" content="Yuch3n">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-01-14 15:07:06 / Modified: 16:21:12" itemprop="dateCreated datePublished" datetime="2025-01-14T15:07:06+08:00">2025-01-14</time>
+      <time title="Created: 2025-01-14 15:07:06 / Modified: 16:38:28" itemprop="dateCreated datePublished" datetime="2025-01-14T15:07:06+08:00">2025-01-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
 <h2 id="init-之後，npm-install無效"><a href="#init-之後，npm-install無效" class="headerlink" title="init 之後，npm install無效"></a>init 之後，<code>npm install</code>無效</h2><p>依照官方指示說明，需要執行下列指令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 
-<p>但是問題來了，當我執行 <code>npm install</code>的時候應該會跑安裝的流程，但是停在這個畫面過了很久還是一樣沒反應。</p>
+<p>但是問題來了，當我執行 <code>npm install</code>的時候應該會跑安裝的流程，卻停在這個畫面過了很久還是一樣沒反應。</p>
 <img src="/posts/21743/npm-install-stop.png" class="" title="npm-install-stop">
 
 <p>查了資料問了 ChatGPT 都無法解決。甚至也影響到了後面要安裝任何套件也是噴 error (´ ﾟ д ﾟ&#96;)</p>
@@ -271,7 +271,7 @@
 
 <p>於是我才想起來，我有裝 pnpm 啦！<br>至於要怎麼知道自己裝的是什麼套件管理器，除了利用終端機<code>-v</code>查詢外，可以透過 hexo 初始化後的目錄結構確認</p>
 <ul>
-<li><p>先用 VS Code 進入專案資料夾。目錄結構應該長這樣：<br><img src="/posts/21743/hexo-directory.png" class="" title="hexo-directory"></p>
+<li><p>先用 VS Code 進入專案資料夾。初始化後的目錄結構應該長這樣：<br><img src="/posts/21743/hexo-directory.png" class="" title="hexo-directory"></p>
 </li>
 <li><p>依照目錄的最後一個檔案：</p>
 <ul>
