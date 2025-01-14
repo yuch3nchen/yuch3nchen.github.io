@@ -207,7 +207,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-01-14 15:07:06 / Modified: 20:25:21" itemprop="dateCreated datePublished" datetime="2025-01-14T15:07:06+08:00">2025-01-14</time>
+      <time title="Created: 2025-01-14 15:07:06 / Modified: 21:04:26" itemprop="dateCreated datePublished" datetime="2025-01-14T15:07:06+08:00">2025-01-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -229,84 +229,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有，從初始化到部署的流程也沒有不同。但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。</p>
-<p>最後會選擇用 Next 主要還是穩定，至於要客製化 Next 也做得到，只是現階段還是先有個基本版面寫文章為主，後續再慢慢研究也不急。</p>
-<h2 id="版本確認"><a href="#版本確認" class="headerlink" title="版本確認"></a>版本確認</h2><p>目前 hexo 最新版是 7.3，所以 node.js 至少要 14 以上（<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/#%E5%BF%85%E8%A6%81%E7%9A%84-Node-js-%E7%89%88%E6%9C%AC">官方文件</a>）：</p>
-<img src="/posts/21743/hexo_nodejs.webp" class="">
-
-<p>我安裝的版本如下：</p>
-<ul>
-<li>Node.js: v20.10.0</li>
-<li>hexo: 7.3.0</li>
-<li>hexo-cli: 4.3.2</li>
-</ul>
-<blockquote>
-<p>如何查看電腦安裝的版本？<br>開啟 iTerm 或終端機，輸入 <code>node -v</code>、<code>npm -v</code>、<code>pnpm -v</code> 查看</p>
-</blockquote>
-<h2 id="init-之後，npm-install無效"><a href="#init-之後，npm-install無效" class="headerlink" title="init 之後，npm install無效"></a>init 之後，<code>npm install</code>無效</h2><p>依照官方指示說明，需要執行下列指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-
-<p>但是問題來了，當我執行 <code>npm install</code>的時候應該會跑安裝的流程，卻停在這個畫面過了很久還是一樣沒反應。</p>
-<img src="/posts/21743/npm-install-stop.webp" class="">
-
-<p>查了資料問了 ChatGPT 都無法解決。甚至也影響到了後面要安裝任何套件也是噴 error (´ ﾟ д ﾟ&#96;)</p>
-<img src="/posts/21743/npm-failed.webp" class="">
-
-<p>就在即將萬念俱灰的時候，終於讓我找到了原因。</p>
-<p><strong>結論：我是白痴。</strong></p>
-<h3 id="解決方法："><a href="#解決方法：" class="headerlink" title="解決方法："></a>解決方法：</h3><p>如官方文件上的說明的第 2 點提到：</p>
-<img src="/posts/21743/hexo-init.webp" class="">
-
-<p>於是我才想起來，我有裝 pnpm 啦！<br>至於要怎麼知道自己裝的是什麼套件管理器，除了利用終端機<code>-v</code>查詢外，可以透過 hexo 初始化後的目錄結構確認</p>
-<ul>
-<li><p>先用 VS Code 進入專案資料夾。初始化後的目錄結構應該長這樣：<br><img src="/posts/21743/hexo-directory.webp" class=""></p>
-</li>
-<li><p>依照目錄的最後一個檔案：</p>
-<ul>
-<li>如果是<code>package-lock.json</code>：請改用<code>npm install</code></li>
-<li>如果是<code>pnpm-lock.yaml</code>：請改用<code>pnpm install</code></li>
-<li>如果是<code>yarn.lock</code>：請改用<code>yarn install</code>（不確定，如有錯請指正）</li>
-</ul>
-</li>
-<li><p>執行過後，應該就能正常安裝了。</p>
-</li>
-</ul>
-<h2 id="更改主題，但是要怎麼修改主題的參數"><a href="#更改主題，但是要怎麼修改主題的參數" class="headerlink" title="更改主題，但是要怎麼修改主題的參數"></a>更改主題，但是要怎麼修改主題的參數</h2><p>事情是這樣的，當我照著網站上的文章做了之後，卻發現怎麼跟我的架構目錄不一樣了，也找不到可以修改的文件。</p>
-<ul>
-<li>首先要更改主題為 Next，必須下載所需套件。可以用兩種方式：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 利用 npm</span></span><br><span class="line">npm install hexo-theme-next@latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用 git</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>接著要在專案根目錄建立一個名為 <code>_config.next.yml</code> 的空白檔案。打開終端機輸入以下指令：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Installed through npm</span></span><br><span class="line"><span class="built_in">cp</span> node_modules/hexo-theme-next/_config.yml _config.next.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Installed through Git</span></span><br><span class="line"><span class="built_in">cp</span> themes/next/_config.yml _config.next.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><code>cp</code>指令的全名是”copy”，複製。也就是從<code>node_modules/hexo-theme-next/_config.yml</code>的內容複製到<code>_config.next.yml</code></p>
-</blockquote>
-<ul>
-<li><p>這時候點開<code>_config.next.yml</code>就可以看到配置的文件已經設定好了，就可以依照自己想調整的設定進行修改。<br><img src="/posts/21743/next-config.webp" class=""></p>
-</li>
-<li><p>例如 Next 目前有提供四種主題模板可以更改，更改的方式也很簡單。只要將要用的那行註解取消，其餘維持註解就好。<br><img src="/posts/21743/next-theme.webp" class=""></p>
-</li>
-<li><p>最後，也就是最重要的一步。記得要更改 <code>_config.yml</code> 的設定，將主題更改為 next</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>接著執行 <code>hexo clean</code> 將快取清除，再執行<code>hexo server</code>確認主題是否正確被啟用。</li>
-</ul>
-<img src="/posts/21743/hexo-theme.webp" class="">
-
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是我用 hexo 架設部落格前置作業所遇到的問題，後續有遇到任何問題的話也會持續更新。</p>
-<h2 id="參考資源"><a href="#參考資源" class="headerlink" title="參考資源"></a>參考資源</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/">Hexo 官方文件</a></li>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20119486/ironman/2944">試著學 Hexo</a>：內容相當完整，也可以到作者的<a target="_blank" rel="noopener" href="https://israynotarray.com/hexo/20200914/3741834499/">部落格</a>的系列文章查看</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">Next 主題文件</a></li>
-</ul>
-
+          <p>雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有，從初始化到部署的流程也沒有不同。但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/21743/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
