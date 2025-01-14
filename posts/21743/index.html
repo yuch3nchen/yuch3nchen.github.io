@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yuch3nchen.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有。初始化到部署的流程沒有不同，但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。 最後會選擇用 Next 主要還是穩定，至於要客製化 Next 也做得到，只是現階段還是先有個基本版面寫文章為主，後續再慢慢研究也不急。 版本確認目前 hexo 最新版是 7.3，所以 node.j">
+    <meta name="description" content="前言雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有，從初始化到部署的流程也沒有不同。但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。 最後會選擇用 Next 主要還是穩定，至於要客製化 Next 也做得到，只是現階段還是先有個基本版面寫文章為主，後續再慢慢研究也不急。 版本確認目前 hexo 最新版是 7.3，所以 node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我在 2025 年用 Hexo 架部落格的筆記">
 <meta property="og:url" content="https://yuch3nchen.github.io/posts/21743/index.html">
 <meta property="og:site_name" content="Yuch3n Blog">
-<meta property="og:description" content="前言雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有。初始化到部署的流程沒有不同，但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。 最後會選擇用 Next 主要還是穩定，至於要客製化 Next 也做得到，只是現階段還是先有個基本版面寫文章為主，後續再慢慢研究也不急。 版本確認目前 hexo 最新版是 7.3，所以 node.j">
+<meta property="og:description" content="前言雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有，從初始化到部署的流程也沒有不同。但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。 最後會選擇用 Next 主要還是穩定，至於要客製化 Next 也做得到，只是現階段還是先有個基本版面寫文章為主，後續再慢慢研究也不急。 版本確認目前 hexo 最新版是 7.3，所以 node">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yuch3nchen.github.io/posts/21743/hexo_nodejs.png">
 <meta property="og:image" content="https://yuch3nchen.github.io/posts/21743/npm-install-stop.png">
@@ -36,9 +36,9 @@
 <meta property="og:image" content="https://yuch3nchen.github.io/posts/21743/next-theme.png">
 <meta property="og:image" content="https://yuch3nchen.github.io/posts/21743/hexo-theme.png">
 <meta property="article:published_time" content="2025-01-14T07:07:06.000Z">
-<meta property="article:modified_time" content="2025-01-14T08:08:47.205Z">
+<meta property="article:modified_time" content="2025-01-14T08:14:48.601Z">
 <meta property="article:author" content="Yuch3n">
-<meta property="article:tag" content="hexo,筆記">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yuch3nchen.github.io/posts/21743/hexo_nodejs.png">
 
@@ -220,7 +220,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-01-14 15:07:06 / Modified: 16:08:47" itemprop="dateCreated datePublished" datetime="2025-01-14T15:07:06+08:00">2025-01-14</time>
+      <time title="Created: 2025-01-14 15:07:06 / Modified: 16:14:48" itemprop="dateCreated datePublished" datetime="2025-01-14T15:07:06+08:00">2025-01-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -228,7 +228,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-hexo/" itemprop="url" rel="index"><span itemprop="name">學習筆記,hexo</span></a>
+          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-hexo/" itemprop="url" rel="index"><span itemprop="name">學習筆記 hexo</span></a>
         </span>
     </span>
 
@@ -241,7 +241,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有。初始化到部署的流程沒有不同，但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有，從初始化到部署的流程也沒有不同。但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。</p>
 <p>最後會選擇用 Next 主要還是穩定，至於要客製化 Next 也做得到，只是現階段還是先有個基本版面寫文章為主，後續再慢慢研究也不急。</p>
 <h2 id="版本確認"><a href="#版本確認" class="headerlink" title="版本確認"></a>版本確認</h2><p>目前 hexo 最新版是 7.3，所以 node.js 至少要 14 以上（<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/#%E5%BF%85%E8%A6%81%E7%9A%84-Node-js-%E7%89%88%E6%9C%AC">官方文件</a>）：</p>
 <img src="/posts/21743/hexo_nodejs.png" class="" title="hexo_nodejs">
@@ -354,7 +354,7 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/hexo-%E7%AD%86%E8%A8%98/" rel="tag"># hexo,筆記</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
           </div>
 
         
