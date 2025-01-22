@@ -21,25 +21,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yuch3nchen.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Music AlchoholicProgramming Enthusiast">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yuch3n Blog">
-<meta property="og:url" content="https://yuch3nchen.github.io/index.html">
+    <meta name="description" content="在所有功能中，我最常用也覺得最實用的就是 Database（資料庫）。其中的 Formula（公式）更是我覺得最好玩的。簡單說就是利用公式就能進行例如：運算、條件判斷、日期計算等等。如果有碰過程式或是了解 excel 公式的應該很快就能上手。即使是新手不熟悉公式，其實利用一些簡單的公式就能解決大部分的用途喔。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用 Notion 的公式實作倒數、計算天數功能">
+<meta property="og:url" content="https://yuch3nchen.github.io/posts/52741/index.html">
 <meta property="og:site_name" content="Yuch3n Blog">
-<meta property="og:description" content="Music AlchoholicProgramming Enthusiast">
+<meta property="og:description" content="在所有功能中，我最常用也覺得最實用的就是 Database（資料庫）。其中的 Formula（公式）更是我覺得最好玩的。簡單說就是利用公式就能進行例如：運算、條件判斷、日期計算等等。如果有碰過程式或是了解 excel 公式的應該很快就能上手。即使是新手不熟悉公式，其實利用一些簡單的公式就能解決大部分的用途喔。">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://yuch3nchen.github.io/posts/undefined/countDays.webp">
+<meta property="og:image" content="https://yuch3nchen.github.io/posts/undefined/notion-database.webp">
+<meta property="og:image" content="https://yuch3nchen.github.io/posts/undefined/notion-preview.webp">
+<meta property="article:published_time" content="2025-01-16T08:24:46.000Z">
+<meta property="article:modified_time" content="2025-01-16T13:09:11.903Z">
 <meta property="article:author" content="Yuch3n">
-<meta property="article:tag" content="網頁,前端,程式,生活,工具,HTML,CSS,JavaScript,Vue,Notion,hexo">
+<meta property="article:tag" content="Notion">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuch3nchen.github.io/posts/undefined/countDays.webp">
 
 
-<link rel="canonical" href="https://yuch3nchen.github.io/">
+<link rel="canonical" href="https://yuch3nchen.github.io/posts/52741/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://yuch3nchen.github.io/posts/52741/","path":"posts/52741/","title":"利用 Notion 的公式實作倒數、計算天數功能"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Yuch3n Blog</title>
+<title>利用 Notion 的公式實作倒數、計算天數功能 | Yuch3n Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDS0TB7FSN"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-JDS0TB7FSN","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -76,7 +82,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Yuch3n Blog</h1>
+      <p class="site-title">Yuch3n Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Ladies and gentlemen we are floating in space</p>
@@ -103,7 +109,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -116,6 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%9D%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">條件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%92%E6%95%B8%E3%80%81%E8%A8%88%E7%AE%97%E5%A4%A9%E6%95%B8"><span class="nav-number">3.</span> <span class="nav-text">倒數、計算天數</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -171,16 +178,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yuch3nchen.github.io/posts/52741/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -194,13 +202,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Yuch3n Blog">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="利用 Notion 的公式實作倒數、計算天數功能 | Yuch3n Blog">
+      <meta itemprop="description" content="在所有功能中，我最常用也覺得最實用的就是 Database（資料庫）。其中的 Formula（公式）更是我覺得最好玩的。簡單說就是利用公式就能進行例如：運算、條件判斷、日期計算等等。如果有碰過程式或是了解 excel 公式的應該很快就能上手。即使是新手不熟悉公式，其實利用一些簡單的公式就能解決大部分的用途喔。">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/52741/" class="post-title-link" itemprop="url">利用 Notion 的公式實作倒數、計算天數功能</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          利用 Notion 的公式實作倒數、計算天數功能
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -230,23 +238,44 @@
   
 </div>
 
+            <div class="post-description">在所有功能中，我最常用也覺得最實用的就是 Database（資料庫）。其中的 Formula（公式）更是我覺得最好玩的。簡單說就是利用公式就能進行例如：運算、條件判斷、日期計算等等。如果有碰過程式或是了解 excel 公式的應該很快就能上手。即使是新手不熟悉公式，其實利用一些簡單的公式就能解決大部分的用途喔。</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>在所有功能中，我最常用也覺得最實用的就是 Database（資料庫）。其中的 Formula（公式）更是我覺得最好玩的。簡單說就是利用公式就能進行例如：運算、條件判斷、日期計算等等。如果有碰過程式或是了解 excel 公式的應該很快就能上手。即使是新手不熟悉公式，其實利用一些簡單的公式就能解決大部分的用途喔。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/52741/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p><strong>前情提要</strong><br>2025 年更新：這篇也是從其他平台搬運過來，重新編修上傳的。雖然 Notion 陸續有進行幾項更動，但資料庫的使用方式及公式卻更加完善了。</p>
+</blockquote>
+<img src="/posts/undefined/countDays.webp" class="">
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前生活中經常使用到的應用有：Notion、Obsidian 及 Craft，但主力的筆記應用目前以 Notion 為主（真的超多功能都用不完，拯救了我過去無效的紀錄方式）</p>
+<p>Notion 可以說是涵括了我的食衣住行育樂的所有，除了日記跟隱私性的資料外，生活上的大小事項都習慣用 Notion 來幫我解決跟紀錄。而 Obsidian 就作為寫文章所用。主要是資料可以保存在本地以及個人雲端硬碟上（iCloud、Google Drive 等），相對比較安心。</p>
+<p>在所有功能中，我最常用也覺得最實用的就是 Database（資料庫）。其中的 Formula（公式）更是我覺得最好玩的。簡單說就是利用公式就能進行例如：運算、條件判斷、日期計算等等。如果有碰過程式或是了解 excel 公式的應該很快就能上手。即使是新手不熟悉公式，其實利用一些簡單的公式就能解決大部分的用途喔。</p>
+<p>由於自己透過摸索，建立了幾個公式卻常常在建立新的頁面，卻忘記怎麼寫的窘境。所以為了避免這個狀況一再發生，自己又要再花時間重寫。以及如果剛好可以幫助到有同樣需求的人，也能幫忙節省下摸索的時間。</p>
+<p>話不多說，先在介紹今天的主角：</p>
+<h2 id="條件"><a href="#條件" class="headerlink" title="條件"></a>條件</h2><ul>
+<li>Notion 帳號</li>
+<li>本文只限於“資料庫”，若是”頁面“則無法使用”公式“功能</li>
+</ul>
+<h2 id="倒數、計算天數"><a href="#倒數、計算天數" class="headerlink" title="倒數、計算天數"></a>倒數、計算天數</h2><img src="/posts/undefined/notion-database.webp" class="">
+
+<ul>
+<li>動機：因為我有一個類似長期型的待辦事項列表，為了讓自己很虐的知道這個事項花了多少天、還剩多少天。因此寫了這個公式。</li>
+<li>適合對象：資料庫欄位至少具備以下類型：建立日期（Created time）、日期（Date）、狀態（Status），才能套用下列公式。</li>
+<li>步驟說明：<ol>
+<li>在需要設定的資料庫列表最右側點選“＋”，選擇 Formula（公式）的 property（屬性）</li>
+<li>點選 Edit（編輯）<br><img src="/posts/undefined/notion-preview.webp" class=""></li>
+<li>輸入以下公式：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="title function_">empty</span>(<span class="title function_">prop</span>(<span class="string">&quot;目標日期&quot;</span>)) and <span class="title function_">prop</span>(<span class="string">&quot;狀態&quot;</span>) == <span class="string">&quot;進行中&quot;</span>,<span class="string">&quot;經過&quot;</span>+<span class="title function_">format</span>(<span class="title function_">dateBetween</span>(<span class="title function_">now</span>(),<span class="keyword">if</span>(<span class="title function_">empty</span>(<span class="title function_">prop</span>(<span class="string">&quot;開始日期&quot;</span>)),<span class="title function_">prop</span>(<span class="string">&quot;建立時間&quot;</span>),<span class="title function_">prop</span>(<span class="string">&quot;開始日期&quot;</span>)),<span class="string">&quot;days&quot;</span>))+<span class="string">&quot;天&quot;</span>,<span class="string">&quot;還有&quot;</span>+<span class="title function_">add</span>(<span class="title function_">toNumber</span>(<span class="title function_">format</span>(<span class="title function_">dateBetween</span>(<span class="title function_">prop</span>(<span class="string">&quot;目標日期&quot;</span>),<span class="title function_">now</span>(),<span class="string">&quot;days&quot;</span>))),<span class="number">1</span>)+<span class="string">&quot;天&quot;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>concat 不支援 text</p>
+</blockquote>
+</li>
+</ul>
+
     </div>
 
     
@@ -254,189 +283,52 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="followme">
+  <span>歡迎關注我的其它發布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/Yuch3n_dev">
+            <span class="icon">
+              <i class="fab fa-x-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Notion/" rel="tag"># Notion</a>
+          </div>
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yuch3nchen.github.io/posts/429/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/profile-astro.png">
-      <meta itemprop="name" content="Yuch3n">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yuch3n Blog">
-      <meta itemprop="description" content="Music Alchoholic<br>Programming Enthusiast">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Yuch3n Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/429/" class="post-title-link" itemprop="url">重機考照分享－我在30歲的時候去考了重機駕照</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2025-01-15 14:14:48" itemprop="dateCreated datePublished" datetime="2025-01-15T14:14:48+08:00">2025-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-01-16 16:31:22" itemprop="dateModified" datetime="2025-01-16T16:31:22+08:00">2025-01-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>還記得18歲剛考到駕照超想買檔車的，但是直到23歲才真正擁有人生第一台檔車。雖然是一台已出廠 10 年的二手雲豹 150，猶記在監理站完成過戶看到行照是自己名字當下的感動，終於有屬於自己的車子，一種願望清單被勾選達成的感動。而重機也是其中一個項目。於是，2022 的年底，就在剛進入30歲的自己終於完成了這項願望。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/429/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yuch3nchen.github.io/posts/21743/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/profile-astro.png">
-      <meta itemprop="name" content="Yuch3n">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yuch3n Blog">
-      <meta itemprop="description" content="Music Alchoholic<br>Programming Enthusiast">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Yuch3n Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/21743/" class="post-title-link" itemprop="url">我在 2025 年用 Hexo 架部落格的筆記</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2025-01-14 15:07:06 / 修改時間：21:04:26" itemprop="dateCreated datePublished" datetime="2025-01-14T15:07:06+08:00">2025-01-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">學習筆記</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>雖然 hexo 架站的資源很豐富，每個步驟手把手的教學也都有，從初始化到部署的流程也沒有不同。但是在部分的流程上有碰到了一些問題，以及主題 Next 文件上也有些更動。因此把問題內容跟解決方法記錄下來。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/21743/">
-                閱讀全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/429/" rel="prev" title="重機考照分享－我在30歲的時候去考了重機駕照">
+                  <i class="fa fa-angle-left"></i> 重機考照分享－我在30歲的時候去考了重機駕照
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
